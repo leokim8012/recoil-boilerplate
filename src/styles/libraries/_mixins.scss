@@ -1,0 +1,50 @@
+@import '_colors.scss';
+@import '_typography.scss';
+
+@mixin reset-button-style() {
+  border: 0;
+  outline: 0;
+  background: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@mixin basic-button-style() {
+  border-radius: 6px;
+  transition: background-color 0.25s, color 0.25s;
+
+  &.small {
+    font: $button-small;
+    padding: 5.5px 16px;
+  }
+
+  &.fullSize {
+    width: 100%;
+  }
+
+  &.disabled {
+    cursor: default;
+    color: $text-disabled;
+  }
+}
+
+@mixin reset-list-style() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin ellipsis($lineCount, $lineHeight) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lineCount;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  line-height: $lineHeight;
+  height: $lineHeight * $lineCount;
+}
